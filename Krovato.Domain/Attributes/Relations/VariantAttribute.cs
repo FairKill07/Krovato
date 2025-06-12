@@ -1,4 +1,5 @@
 ﻿using Krovato.Domain.Attributes.Entities;
+using Krovato.Domain.Products.Entities;
 
 public class VariantAttribute
 {

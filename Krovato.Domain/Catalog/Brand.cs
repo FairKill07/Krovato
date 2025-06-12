@@ -1,4 +1,5 @@
 ﻿using Krovato.Domain.Common.Interface;
+using Krovato.Domain.Products.Entities;
 
 namespace Krovato.Domain.Catalog.Entities;
 

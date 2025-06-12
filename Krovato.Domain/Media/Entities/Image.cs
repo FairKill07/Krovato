@@ -1,4 +1,6 @@
-﻿namespace Krovato.Domain.Media.Entities
+﻿using Krovato.Domain.Products.Entities;
+
+namespace Krovato.Domain.Media.Entities
 {
     public class Image
     {

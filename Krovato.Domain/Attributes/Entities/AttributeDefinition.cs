@@ -1,6 +1,4 @@
-﻿using Krovato.Domain.Promotions.Enums;
-
-namespace Krovato.Domain.Attributes.Entities
+﻿namespace Krovato.Domain.Attributes.Entities
 {
     public class AttributeDefinition
     {
