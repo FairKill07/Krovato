@@ -1,9 +1,8 @@
-﻿namespace Krovato.Domain.Products.Entities;
-
-using Krovato.Domain.Catalog.Entities;
+﻿using Krovato.Domain.Catalog.Entities;
 using Krovato.Domain.Common.Entities;
 using Krovato.Domain.Media.Entities;
 
+namespace Krovato.Domain.Products.Entities;
 public class Product : AuditableEntity
 {
     public int CategoryId { get; set; }
