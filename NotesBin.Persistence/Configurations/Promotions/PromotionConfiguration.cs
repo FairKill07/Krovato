@@ -18,12 +18,6 @@ namespace Krovato.Persistence.Configurations.Promotions
                 .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
-            builder.Property(p => p.StartDate)
-                .IsRequired();
-
-            builder.Property(p => p.EndDate)
-                .IsRequired();
-
             builder.Property(p => p.AppliesToId)
                 .IsRequired();
         }
