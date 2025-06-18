@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using AutoMapper;
 
-
 namespace Krovato.Application.Common.Mappings
 {
     public class AssemblyMappingProfile : Profile

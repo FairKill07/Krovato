@@ -5,8 +5,8 @@ using Krovato.Domain.Media.Entities;
 namespace Krovato.Domain.Products.Entities;
 public class Product : AuditableEntity
 {
-    public int CategoryId { get; set; }
-    public int? BrandId { get; set; }
+    public Guid CategoryId { get; set; }
+    public Guid? BrandId { get; set; }
     public string Name { get; set; } = null!;
     public string? Description { get; set; }
     public decimal BasePrice { get; set; }

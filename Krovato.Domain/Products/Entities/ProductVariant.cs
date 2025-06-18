@@ -4,7 +4,7 @@ using Krovato.Domain.Common.Entities;
 namespace Krovato.Domain.Products.Entities;
 public class ProductVariant : AuditableEntity
 {
-    public int ProductId { get; set; }
+    public Guid ProductId { get; set; }
     public string Sku { get; set; } = null!;
     public decimal? Price { get; set; }
     public int Stock { get; set; }

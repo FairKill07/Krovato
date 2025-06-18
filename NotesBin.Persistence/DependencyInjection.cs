@@ -1,4 +1,5 @@
-﻿using Krovato.Persistence.DbContexts;
+﻿using Krovato.Application.Interfaces;
+using Krovato.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace Krovato.Persistence
                 options.UseNpgsql(connectionString);
             });
 
+            serviceCollection.AddScoped<IKrovatoDbContext>(provider => provider.GetRequiredService<KrovatoDbContext>());
             return serviceCollection;
         }
     }

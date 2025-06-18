@@ -2,20 +2,19 @@
 using MediatR;
 using Krovato.Domain.Products.Entities;
 
-namespace Krovato.Application.Products.Commands
+namespace Krovato.Application.Products.Commands.CreateProducts
 {
-    class CreateProductsCommandHandler : IRequestHandler<CreateProductsCommand, Guid>
+    class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Guid>
     {
         private readonly IKrovatoDbContext _dbContext;
 
-        public CreateProductsCommandHandler(IKrovatoDbContext dbContext) =>_dbContext = dbContext;
+        public CreateProductCommandHandler(IKrovatoDbContext dbContext) =>_dbContext = dbContext;
 
-        public async Task<Guid> Handle(CreateProductsCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            // Create a new Product entity
             var product = new Product
             {
-                Id = Guid.NewGuid(), // Generate a new unique identifier for the product
+                Id = Guid.NewGuid(),
                 CategoryId = request.CategoryId,
                 BrandId = request.BrandId,
                 Name = request.Name,
@@ -23,14 +22,12 @@ namespace Krovato.Application.Products.Commands
                 BasePrice = request.BasePrice,
                 Stock = request.Stock
             };
-            // Add the product to the DbContext
+
             _dbContext.Products.Add(product);
-            // Save changes to the database
+
             await _dbContext.SaveChangesAsync(cancellationToken);
-            // Return the created product's ID
+
             return product.Id;
         }
-
-
     }
 }

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Krovato.Application\Krovato.Application.csproj" />
     <ProjectReference Include="..\NotesBin.Persistence\Krovato.Persistence.csproj" />
   </ItemGroup>
 
