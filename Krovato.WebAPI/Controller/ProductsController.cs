@@ -24,7 +24,7 @@ namespace Krovato.WebAPI.Controllers
             return NoContent();
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateProductDto createProductDto)
         {
             var command = _mapper.Map<CreateProductCommand>(createProductDto);
@@ -32,11 +32,10 @@ namespace Krovato.WebAPI.Controllers
             return Ok(id);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] UpdateProductDto updateProductDto)
+        [HttpPut("Update")]
+        public async Task<ActionResult> Update([FromBody] UpdateProductDto updateProductDto)
         {
             var command = _mapper.Map<UpdateProductCommand>(updateProductDto);
-            command.Id = id;
             await Mediator.Send(command);
             return NoContent();
         }

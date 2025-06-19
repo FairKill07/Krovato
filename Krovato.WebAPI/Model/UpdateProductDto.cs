@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Krovato.Application.Common.Mappings;
-using Krovato.Application.Products.Commands.CreateProducts;
 using Krovato.Application.Products.Commands.UpdateProduct;
 using System.ComponentModel.DataAnnotations;
 
