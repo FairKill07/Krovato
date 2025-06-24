@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Krovato.Domain.Products.Entities;
-using MediatR;
+﻿using MediatR;
 
 namespace Krovato.Application.Images.Commands.UploadImage
 {

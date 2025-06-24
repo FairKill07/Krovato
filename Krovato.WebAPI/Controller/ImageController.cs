@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Krovato.Application.Images.Commands.UploadImage;
-using Krovato.Application.Products.Commands.AddProductImage;
+using Krovato.Application.Products.Commands.AssignImagesToProduct;
+using Krovato.Application.Products.Commands.RemoveProductImages;
 using Krovato.WebAPI.Controllers;
 using Krovato.WebAPI.Model;
 
@@ -23,10 +24,18 @@ namespace Krovato.WebAPI.Controller
             return Ok(id);
         }
 
-        [HttpPost("Assign")]
-        public async Task<ActionResult> AssignImage([FromBody] AssignImageDTO assignImageDTO )
+        [HttpPost("AssignImages")]
+        public async Task<ActionResult> AssignImage([FromBody] AssignImagesDto assignImageDTO)
         {
             var command = _mapper.Map<AssignImagesToProductCommand>(assignImageDTO);
+            await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("RemoveAssignImages")]
+        public async Task<ActionResult> RemoveAssignImage([FromBody] RemoveProductImagesDto removeImageDTO)
+        {
+            var command = _mapper.Map<RemoveProductImageCommand>(removeImageDTO);
             await Mediator.Send(command);
             return NoContent();
         }

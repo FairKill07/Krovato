@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Krovato.Application.Interfaces;
+﻿using Krovato.Application.Interfaces;
 using Krovato.Domain.Media.Entities;
 using MediatR;
 

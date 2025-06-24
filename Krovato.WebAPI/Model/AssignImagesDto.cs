@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Krovato.Application.Common.Mappings;
-using Krovato.Application.Products.Commands.AddProductImage;
+using Krovato.Application.Products.Commands.AssignImagesToProduct;
 
 namespace Krovato.WebAPI.Model
 {
-    public class AssignImageDTO : IMapWith<AssignImagesToProductCommand>
+    public class AssignImagesDto : IMapWith<AssignImagesToProductCommand>
     {
         [Required]
         public List<Guid> ImageIds { get; set; } = [];
@@ -12,7 +12,7 @@ namespace Krovato.WebAPI.Model
 
         public void Mapping(AutoMapper.Profile profile)
         {
-            profile.CreateMap<AssignImageDTO, AssignImagesToProductCommand>()
+            profile.CreateMap<AssignImagesDto, AssignImagesToProductCommand>()
                 .ForMember(command => command.ImageIds,
                     opt => opt.MapFrom(dto => dto.ImageIds))
                 .ForMember(command => command.ProductId,

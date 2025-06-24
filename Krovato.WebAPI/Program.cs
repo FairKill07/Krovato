@@ -2,6 +2,7 @@ using System.Reflection;
 using Krovato.Application;
 using Krovato.Application.Common.Mappings;
 using Krovato.Application.Interfaces;
+using Krovato.Infrastructure;
 using Krovato.Persistence;
 using Krovato.Persistence.DbContexts;
 
@@ -24,6 +25,8 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
     config.AddProfile(new AssemblyMappingProfile(typeof(IKrovatoDbContext).Assembly));
 });
+
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 

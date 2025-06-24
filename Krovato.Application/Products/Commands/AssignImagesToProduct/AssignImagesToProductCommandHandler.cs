@@ -1,4 +1,5 @@
 ﻿using Krovato.Application.Interfaces;
+using Krovato.Application.Products.Commands.AssignImagesToProduct;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

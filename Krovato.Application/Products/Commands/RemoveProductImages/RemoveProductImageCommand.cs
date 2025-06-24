@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace Krovato.Application.Products.Commands.AddProductImage
+namespace Krovato.Application.Products.Commands.RemoveProductImages
 {
-    public class AssignImagesToProductCommand : IRequest<Unit>
+    public class RemoveProductImageCommand : IRequest<Unit>
     {
         public List<Guid> ImageIds { get; set; } = [];
 
