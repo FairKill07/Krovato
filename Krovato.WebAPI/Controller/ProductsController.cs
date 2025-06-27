@@ -2,7 +2,7 @@
 using Krovato.Application.Products.Commands.CreateProducts;
 using Krovato.Application.Products.Commands.DeleteProduct;
 using Krovato.Application.Products.Commands.UpdateProduct;
-using Krovato.WebAPI.Model;
+using Krovato.WebAPI.Model.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

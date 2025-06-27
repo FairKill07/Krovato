@@ -2,7 +2,7 @@
 using Krovato.Application.Common.Mappings;
 using Krovato.Application.Products.Commands.AssignImagesToProduct;
 
-namespace Krovato.WebAPI.Model
+namespace Krovato.WebAPI.Model.Images
 {
     public class AssignImagesDto : IMapWith<AssignImagesToProductCommand>
     {

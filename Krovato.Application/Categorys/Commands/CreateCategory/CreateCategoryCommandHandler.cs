@@ -1,9 +1,8 @@
-﻿using Krovato.Application.Categorys.Commands;
-using Krovato.Application.Interfaces;
+﻿using Krovato.Application.Interfaces;
 using Krovato.Domain.Catalog.Entities;
 using MediatR;
 
-namespace Krovato.Application.Categorys.Handlers
+namespace Krovato.Application.Categorys.Commands.CreateCategory
 {
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, Unit>
     {

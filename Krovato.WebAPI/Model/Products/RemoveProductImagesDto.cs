@@ -2,7 +2,7 @@
 using Krovato.Application.Common.Mappings;
 using Krovato.Application.Products.Commands.RemoveProductImages;
 
-namespace Krovato.WebAPI.Model
+namespace Krovato.WebAPI.Model.Products
 {
     public class RemoveProductImagesDto : IMapWith<RemoveProductImageCommand>
     {

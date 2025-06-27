@@ -11,7 +11,6 @@ namespace Krovato.Application.Products.Commands.DeleteProduct
 
         public async Task<Unit> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            // Find the product by ID
             var product = await _dbContext.Products.FindAsync(request.Id);
             if (product == null)
             {

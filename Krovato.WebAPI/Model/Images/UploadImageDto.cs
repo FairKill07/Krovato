@@ -3,7 +3,7 @@ using AutoMapper;
 using Krovato.Application.Common.Mappings;
 using Krovato.Application.Images.Commands.UploadImage;
 
-namespace Krovato.WebAPI.Model
+namespace Krovato.WebAPI.Model.Images
 {
     public class UploadImageDto : IMapWith<UploadImageCommand>
     {

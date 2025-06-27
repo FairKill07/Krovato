@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Krovato.Application.Categorys.Commands;
+﻿using Krovato.Application.Categorys.Commands.CreateCategory;
 using Krovato.Application.Common.Mappings;
 
-namespace Krovato.WebAPI.Model
+namespace Krovato.WebAPI.Model.Categorys
 {
     public class CreateCategoryDto: IMapWith<CreateCategoryCommand>
     {

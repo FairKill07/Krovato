@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using Krovato.Application.Common.Mappings;
-using Krovato.Application.Products.Commands.CreateProducts;
+using Krovato.Application.Products.Commands.UpdateProduct;
 using System.ComponentModel.DataAnnotations;
 
-namespace Krovato.WebAPI.Model
+namespace Krovato.WebAPI.Model.Products
 {
-    public class CreateProductDto : IMapWith<CreateProductCommand>
+    public class UpdateProductDto : IMapWith<UpdateProductCommand>
     {
         [Required]
+        public Guid Id { get; set; }
         public Guid CategoryId { get; set; }
         public Guid? BrandId { get; set; }
         public string Name { get; set; } = null!;
@@ -17,7 +18,9 @@ namespace Krovato.WebAPI.Model
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CreateProductDto, CreateProductCommand>()
+            profile.CreateMap<UpdateProductDto, UpdateProductCommand>()
+                .ForMember(productCommand => productCommand.Id,
+                    opt => opt.MapFrom(productDto => productDto.Id))
                 .ForMember(productCommand => productCommand.CategoryId,
                     opt => opt.MapFrom(productDto => productDto.CategoryId))
                 .ForMember(productCommand => productCommand.BrandId,
@@ -33,4 +36,3 @@ namespace Krovato.WebAPI.Model
         }
     }
 }
-
