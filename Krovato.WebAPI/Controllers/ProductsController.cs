@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
+using Krovato.Application.Products.Commands.AssignBrandToProduct;
+using Krovato.Application.Products.Commands.AssignCategoryToProduct;
 using Krovato.Application.Products.Commands.CreateProducts;
 using Krovato.Application.Products.Commands.DeleteProduct;
 using Krovato.Application.Products.Commands.UpdateProduct;
 using Krovato.WebAPI.Model.Products;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Krovato.WebAPI.Controllers
@@ -20,7 +21,7 @@ namespace Krovato.WebAPI.Controllers
         public async Task<ActionResult<Guid>> Create([FromBody] CreateProductDto createProductDto)
         {
             var command = _mapper.Map<CreateProductCommand>(createProductDto);
-            var id = await Mediator.Send(command); 
+            var id = await Mediator.Send(command);
             return Ok(id);
         }
 
@@ -38,6 +39,23 @@ namespace Krovato.WebAPI.Controllers
             var command = new DeleteProductCommand { Id = id };
             await Mediator.Send(command);
             return NoContent();
+        }
+
+        [HttpPost("AssignCategoryToProduct")]
+        public async Task<ActionResult<Guid>> AssignCategoryToProduct([FromBody] AssignCategoryToProductDto assignCategoryToProductDto)
+        {
+            var command = _mapper.Map<AssignCategoryToProductCommand>(assignCategoryToProductDto);
+            var id = await Mediator.Send(command);
+            return Ok(id);
+        }
+
+        [HttpPost("AssignBrandToProduct")]
+
+        public async Task<ActionResult<Guid>> AssignBrandToProduct([FromBody] AssignBrandToProductDto assignBrandToProductDto)
+        {
+            var command = _mapper.Map<AssignBrandToProductCommand>(assignBrandToProductDto);
+            var id = await Mediator.Send(command);
+            return Ok(id);
         }
     }
 }
