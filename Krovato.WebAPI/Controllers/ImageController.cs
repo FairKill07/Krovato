@@ -2,12 +2,11 @@
 using Krovato.Application.Images.Commands.UploadImage;
 using Krovato.Application.Products.Commands.AssignImagesToProduct;
 using Krovato.Application.Products.Commands.RemoveProductImages;
-using Krovato.WebAPI.Controllers;
 using Krovato.WebAPI.Model.Images;
 using Krovato.WebAPI.Model.Products;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Krovato.WebAPI.Controller
+namespace Krovato.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

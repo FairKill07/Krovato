@@ -2,11 +2,10 @@
 using Krovato.Application.Categorys.Commands.CreateCategory;
 using Krovato.Application.Categorys.Commands.DeleteCategory;
 using Krovato.Application.Categorys.Commands.UpdateCategory;
-using Krovato.WebAPI.Controllers;
 using Krovato.WebAPI.Model.Categorys;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Krovato.WebAPI.Controller
+namespace Krovato.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -32,7 +31,7 @@ namespace Krovato.WebAPI.Controller
             return Ok(id);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = new DeleteCategoryCommand { Id = id };

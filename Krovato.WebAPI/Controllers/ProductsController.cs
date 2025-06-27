@@ -16,14 +16,6 @@ namespace Krovato.WebAPI.Controllers
 
         public ProductsController(IMapper mapper) => _mapper = mapper;
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var command = new DeleteProductCommand { Id = id };
-            await Mediator.Send(command);
-            return NoContent();
-        }
-
         [HttpPost("Create")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateProductDto createProductDto)
         {
@@ -32,10 +24,18 @@ namespace Krovato.WebAPI.Controllers
             return Ok(id);
         }
 
-        [HttpPut("Update")]
+        [HttpPost("Update")]
         public async Task<ActionResult> Update([FromBody] UpdateProductDto updateProductDto)
         {
             var command = _mapper.Map<UpdateProductCommand>(updateProductDto);
+            await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("Delete/{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var command = new DeleteProductCommand { Id = id };
             await Mediator.Send(command);
             return NoContent();
         }
