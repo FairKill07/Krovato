@@ -18,6 +18,7 @@ namespace Krovato.Application.Interfaces
         DbSet<VariantAttribute> VariantAttributes { get; }
         DbSet<Promotion> Promotions { get; }
         DbSet<Image> Images { get; }
+        DbSet<AttributeOption> AttributeOptions { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

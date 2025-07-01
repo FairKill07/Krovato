@@ -6,8 +6,8 @@ public class ProductAttribute
     public Guid Id { get; set; }
     public Guid ProductId { get; set; }
     public Guid AttributeDefinitionId { get; set; }
-    public string Value { get; set; } = null!;
+    public required string Value { get; set; } 
 
-    public Product Product { get; set; } = null!;
-    public AttributeDefinition AttributeDefinition { get; set; } = null!;
+    public required Product Product { get; set; } 
+    public required AttributeDefinition AttributeDefinition { get; set; } 
 }

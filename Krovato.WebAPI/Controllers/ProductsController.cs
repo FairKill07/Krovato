@@ -4,6 +4,8 @@ using Krovato.Application.Products.Commands.AssignCategoryToProduct;
 using Krovato.Application.Products.Commands.CreateProducts;
 using Krovato.Application.Products.Commands.DeleteProduct;
 using Krovato.Application.Products.Commands.UpdateProduct;
+using Krovato.Application.Products.Queries.GetAllProducts;
+using Krovato.Application.Products.Queries.GetProductById;
 using Krovato.WebAPI.Model.Products;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,6 +58,26 @@ namespace Krovato.WebAPI.Controllers
             var command = _mapper.Map<AssignBrandToProductCommand>(assignBrandToProductDto);
             var id = await Mediator.Send(command);
             return Ok(id);
+        }
+
+        [HttpGet("GetProductById/{id}")]
+        public async Task<ActionResult> GetProductById(Guid id)
+        {
+            var query = new GetProductByIdQuery { Id = id };
+            var product = await Mediator.Send(query);
+            if (product is null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
+
+        [HttpGet("GetAllProducts")]
+        public async Task<ActionResult> GetAllProducts()
+        {
+            var query = new GetAllProductsQuery();
+            var products = await Mediator.Send(query);
+            return Ok(products);
         }
     }
 }

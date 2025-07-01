@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Krovato.Domain\Krovato.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Products\Queries\" />
-  </ItemGroup>
-
 </Project>

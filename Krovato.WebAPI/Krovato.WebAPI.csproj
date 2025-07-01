@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Krovato.Application\Krovato.Application.csproj" />
     <ProjectReference Include="..\Krovato.Infrastructure\Krovato.Infrastructure.csproj" />
-    <ProjectReference Include="..\NotesBin.Persistence\Krovato.Persistence.csproj" />
+    <ProjectReference Include="..\Krovato.Persistence\Krovato.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

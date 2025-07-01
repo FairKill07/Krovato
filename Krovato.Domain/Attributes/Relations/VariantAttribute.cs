@@ -6,8 +6,8 @@ public class VariantAttribute
     public Guid Id { get; set; }
     public Guid VariantId { get; set; }
     public Guid AttributeDefinitionId { get; set; }
-    public string Value { get; set; } = null!;
+    public required string Value { get; set; }
 
-    public ProductVariant Variant { get; set; } = null!;
-    public AttributeDefinition AttributeDefinition { get; set; } = null!;
+    public required ProductVariant Variant { get; set; }
+    public required AttributeDefinition AttributeDefinition { get; set; } 
 }

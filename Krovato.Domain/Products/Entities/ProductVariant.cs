@@ -5,11 +5,11 @@ namespace Krovato.Domain.Products.Entities;
 public class ProductVariant : AuditableEntity
 {
     public Guid ProductId { get; set; }
-    public string Sku { get; set; } = null!;
+    public required string Sku { get; set; }
     public decimal? Price { get; set; }
     public int Stock { get; set; }
 
     public Product Product { get; set; } = null!;
-    public ICollection<VariantAttribute> Attributes { get; set; } = new List<VariantAttribute>();
-    public ICollection<Image> Images { get; set; } = new List<Image>();
+    public ICollection<VariantAttribute> Attributes { get; set; } = [];
+    public ICollection<Image> Images { get; set; } = [];
 }

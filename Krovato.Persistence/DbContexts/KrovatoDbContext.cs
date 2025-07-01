@@ -62,6 +62,7 @@ public class KrovatoDbContext : DbContext, IKrovatoDbContext
     public DbSet<VariantAttribute> VariantAttributes => Set<VariantAttribute>();
     public DbSet<Promotion> Promotions => Set<Promotion>();
     public DbSet<Image> Images => Set<Image>();
+    public DbSet<AttributeOption> AttributeOptions => Set<AttributeOption>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -71,6 +72,7 @@ public class KrovatoDbContext : DbContext, IKrovatoDbContext
         modelBuilder.ApplyConfiguration(new VariantAttributeConfiguration());
         modelBuilder.ApplyConfiguration(new CategoryConfiguration());
         modelBuilder.ApplyConfiguration(new BrandConfiguration());
+        modelBuilder.ApplyConfiguration(new AttributeOptionConfiguration());
         modelBuilder.ApplyConfiguration(new AttributeDefinitionConfiguration());
         modelBuilder.ApplyConfiguration(new PromotionConfiguration());
         modelBuilder.ApplyConfiguration(new ImageConfiguration());

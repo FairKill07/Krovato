@@ -9,7 +9,7 @@ namespace Krovato.Domain.Media.Entities
         public Guid? ProductId { get; set; }
         public Guid? VariantId { get; set; }
 
-        public string Url { get; set; } = null!;
+        public required string Url { get; set; }
         public string? AltText { get; set; }
 
         public Product? Product { get; set; }
